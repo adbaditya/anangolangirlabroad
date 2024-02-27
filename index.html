@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700"rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <style>
+    body {
+  font-family: "Montserrat"; }
+
+.bold {
+  font-weight: 700; }
+
+hr {
+  width: 5.625rem;
+  height: 0.1875rem;
+  background-color: #00ff6c; }
+
+.btn {
+  padding: .5rem 1.5rem;
+  border: 1px solid #00ff6c;
+  border-radius: 0;
+  color: #00ff6c;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .btn:hover {
+    background-color: #00ff6c;
+    color: #232323; }
+
+h2 {
+  text-transform: uppercase;
+  font-weight: 700; }
+
+.menu-responsive {
+  background-color: #00ff6c;
+  padding: 2rem 0; }
+  .menu-responsive ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .menu-responsive ul li {
+      width: 100%;
+      padding: 1.5rem 0;
+      text-align: center; }
+      .menu-responsive ul li a {
+        font-size: 1.125rem;
+        color: #232323;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s; }
+        .menu-responsive ul li a:hover, .menu-responsive ul li a:active {
+          color: #fff;
+          text-decoration: none; }
+
+.header__top--responsive ul {
+  float: right; }
+  .header__top--responsive ul li .menu-bars {
+    font-size: 2.4rem;
+    color: #fff;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
+    .header__top--responsive ul li .menu-bars:hover, .header__top--responsive ul li .menu-bars:active {
+      color: #00ff6c; }
+
+header {
+  height: 100vh;
+  background-image: url("http://res.cloudinary.com/cyrilg/image/upload/v1500226721/header-bg_pyddzq.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top; }
+
+.header__top {
+  padding-top: 2.5rem;
+  margin-bottom: 6rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+
+.header__top-brand {
+  color: #00ff6c; }
+  .header__top-brand .bold {
+    text-transform: uppercase; }
+  .header__top-brand h1 {
+    font-size: 1.9rem;
+    font-weight: 300;
+    margin-bottom: 0.4rem; }
+  .header__top-brand hr {
+    margin: 0; }
+
+.header__top-nav ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .header__top-nav ul li {
+    display: inline-block;
+    margin-right: 2rem; }
+    .header__top-nav ul li:last-child {
+      margin-right: 0; }
+    .header__top-nav ul li a {
+      font-size: 1.25rem;
+      color: #fff;
+      line-height: 2.5rem;
+      font-weight: 300;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+      .header__top-nav ul li a:hover, .header__top-nav ul li a:active {
+        color: #cccccc;
+        text-decoration: none; }
+
+.header__content {
+  width: 80%;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 1.8rem;
+  text-align: center; }
+  .header__content p {
+    line-height: 2.25rem; }
+    .header__content p:first-child {
+      line-height: 3.3rem; }
+  .header__content .btn {
+    margin-top: 3rem; }
+
+.header__arrow {
+  margin-top: 4.85rem;
+  text-align: center; }
+  .header__arrow a {
+    color: #fff;
+    font-size: 1.5rem; }
+    .header__arrow a i {
+      -webkit-animation: bounce 2s infinite;
+      animation: bounce 2s infinite; }
+
+@-webkit-keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40%, 43% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  75% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); } }
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40%, 43% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  75% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); } }
+
+@media (min-width: 47.9em) {
+  .header__top--responsive {
+    margin-top: -.75rem; }
+  .header__top {
+    padding-top: 3.5rem;
+    margin-bottom: 10rem; }
+  .header__content {
+    font-size: 2rem; }
+    .header__content .btn {
+      padding: .6rem 1.7rem; }
+  .header__arrow {
+    margin-top: 12.85rem; } }
+
+@media (min-width: 61.9em) {
+  .header__top {
+    margin-bottom: 16rem; }
+  .header__content {
+    font-size: 2.5rem; }
+    .header__content p {
+      line-height: 2.45rem; }
+  .header__arrow {
+    margin-top: 16rem; } }
+
+@media (min-width: 74.9em) {
+  .header__top {
+    margin-bottom: 9.5rem; }
+  .header__content {
+    font-size: 3rem; }
+    .header__content p {
+      line-height: 2.95rem; }
+    .header__content .btn {
+      margin-top: 4rem;
+      font-size: 1.2rem; }
+  .header__arrow {
+    margin-top: 12rem; } }
+
+#about {
+  padding: 5rem 0;
+  text-align: center; }
+  #about img {
+    border: 2px solid #232323;
+    border-radius: 100%;
+    padding: .2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem; }
+  #about .lead {
+    font-size: 1.5rem;
+    color: #00ff6c;
+    font-weight: 700;
+    margin-bottom: 1.5rem; }
+  #about p {
+    font-size: 1.25rem;
+    color: #232323; }
+    #about p a {
+      color: #232323;
+      text-decoration: underline;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+      #about p a:hover {
+        color: #00ff6c; }
+  #about p + p {
+    margin-bottom: 2rem; }
+
+@media (min-width: 47.9em) {
+  #about {
+    width: 85%;
+    margin: 0 auto; }
+    #about h2 {
+      font-size: 2.2rem; }
+    #about .lead {
+      font-size: 1.7rem;
+      margin-bottom: 1.5rem; }
+    #about p {
+      font-size: 1.45rem; } }
+
+@media (min-width: 61.9em) {
+  #about {
+    width: 80%; }
+    #about h2 {
+      font-size: 2.4rem; }
+    #about .lead {
+      font-size: 1.9rem;
+      margin-bottom: 1.5rem; }
+    #about p {
+      font-size: 1.65rem; } }
+
+@media (min-width: 74.9em) {
+  #about {
+    width: 60%; }
+    #about h2 {
+      font-size: 2.6rem; }
+    #about .lead {
+      font-size: 2.1rem;
+      margin-bottom: 1.5rem; }
+    #about p {
+      font-size: 1.85rem; }
+    #about p + p {
+      margin-bottom: 2.2rem; } }
+
+#skills {
+  background-color: #232323;
+  padding: 5rem 0; }
+  #skills h2 {
+    color: #00ff6c;
+    text-align: center; }
+  #skills hr {
+    margin-bottom: 3rem; }
+  #skills .skill {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    #skills .skill .skills__percent {
+      margin-right: 1.75rem;
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: #ccc; }
+    #skills .skill .progress-container {
+      -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+      font-size: 1.125rem;
+      color: #f3f3f3; }
+      #skills .skill .progress-container .progress {
+        border-radius: 0;
+        margin-top: .35rem;
+        background-color: #373737; }
+        #skills .skill .progress-container .progress .progress-bar {
+          height: 1.125rem;
+          background-color: #00ff6c; }
+
+#portfolio {
+  padding: 5rem 0;
+  text-align: center; }
+  #portfolio hr {
+    margin-bottom: 3rem; }
+  #portfolio figure {
+    position: relative; }
+    #portfolio figure img {
+      width: 100%; }
+    #portfolio figure figcaption {
+      position: absolute;
+      top: .75rem;
+      right: .75rem;
+      bottom: .75rem;
+      left: .75rem;
+      background-color: #00ff6c;
+      padding-top: 4rem;
+      opacity: 0;
+      -webkit-transition: all .5s;
+      -o-transition: all .5s;
+      transition: all .5s;
+      color: #232323; }
+      #portfolio figure figcaption:hover {
+        background-color: rgba(0, 255, 108, 0.6);
+        opacity: 1; }
+      #portfolio figure figcaption h3 {
+        text-transform: uppercase; }
+      #portfolio figure figcaption p {
+        margin-bottom: 3rem; }
+      #portfolio figure figcaption a {
+        font-size: 2rem;
+        color: #f3f3f3;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s; }
+        #portfolio figure figcaption a:hover {
+          color: #232323; }
+
+#contact {
+  padding: 5rem 0;
+  background-color: #00ff6c;
+  text-align: center; }
+  #contact .lead {
+    margin-bottom: -.25rem;
+    font-size: 1.85rem;
+    font-weight: 700; }
+  #contact p {
+    font-size: 1.65rem;
+    font-weight: 300; }
+  #contact .text-animate {
+    font-weight: 700; }
+  #contact .btn {
+    margin-top: 2.5rem;
+    border: 2px solid #232323;
+    color: #232323; }
+    #contact .btn:hover {
+      background-color: #232323;
+      color: #00ff6c; }
+  #contact .contact__social {
+    margin-top: 3rem;
+    font-size: 2rem; }
+    #contact .contact__social a {
+      color: #232323;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+      #contact .contact__social a:hover {
+        color: #fff; }
+
+#footer {
+  padding: .5rem 0;
+  background-color: #232323;
+  text-align: center;
+  color: #fff; }
+  #footer p {
+    font-size: .85rem; }
+    #footer p a {
+      color: #fff;
+      text-decoration: underline;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+      #footer p a:hover {
+        color: #00ff6c; }
+    #footer p .fa-heart {
+      color: red; }
+
+@media (min-width: 47.9em) {
+  #contact .lead {
+    font-size: 2.05rem; }
+  #contact p {
+    font-size: 1.85rem; } }
+
+@media (min-width: 61.9em) {
+  #contact .lead {
+    font-size: 2.25rem; }
+  #contact p {
+    font-size: 2.05rem; } }
+
+@media (min-width: 74.9em) {
+  #contact .lead {
+    font-size: 2.45rem; }
+  #contact p {
+    font-size: 2.25rem; } }
+
+  </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="header__top">
+                    <div class="col-md-6 header__top-brand">
+                        <h1><span class="bold">An Angolan Girl Abroad</h1>
+                        <hr>       
+                    </div>
+                    <nav class="col-md-6 header__top-nav hidden-md-down">
+                        <ul>
+                            <li><a class="scroll" href="#about">About</a></li>
+                            <li><a class="scroll" href="#skills">Skills</a></li>
+                            <li><a class="scroll" href="#portfolio">Gallery</a></li>
+                            <li><a class="scroll" href="#contact">Socials</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="header__content">
+                <p class="bold">Hello !</p>
+              <p>I'm <span class="bold">Mirembe,</span> an Angolan medical student studying in <span class="bold">Bulgaria.</span> I started my youtube channel to share my experiences as an international student living abroad.</p>
+                <a class="btn scroll" href="#about">Who I am?</a>
+            </div>
+            
+            <div class="header__arrow">
+                <a class="scroll" href="#about"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+            </div>
+            
+        </div>                
+    </header>
+    
+    <section id="about">
+        <div class="container">
+            <h2>Who I Am</h2>
+            <hr>
+            <img src="data:image/png;base64,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">            <p class="lead">Travel Vlogger & Medical Student</p>
+            <p>I'm <span class="bold">Mirembe</span>, a <strong>Travel Vlogger</strong> and <strong>Medical Student</strong> from Angola studying in Bulgaria</p>
+            <p>On my channel, you'll find vlogs documenting my travels across Europe during school breaks. I visit new countries and cities to experience new cultures and cuisines. Expect videos showcasing the top sights, hidden gems, restaurants, cafes and nightlife in each destination.</p>
+            <p>You'll also get an inside look at medical school through study vlogs. I share how I manage my courseload, take exams, handle stress and practical tips for succeeding in med school. My goal is to inspire and help other aspiring doctors around the world.</p>
+            <p>In addition to travel and study vlogs, I post videos about topics like adapting to life abroad, making international friends, learning new languages and more.</p>
+          <p>Overall, my channel is about crossing borders, discovering the world and following my dreams. Subscribe and join me on these amazing adventures!</p>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <hr>
+            <div class="row">
+                <div class="skill col-12 col-lg-6">
+                    <div class="skills__percent">95%</div>
+                    <div class="progress-container">
+                        <strong>Videography</strong>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill col-12 col-lg-6">
+                    <div class="skills__percent">80%</div>
+                    <div class="progress-container">
+                        <strong>Content Creation</strong>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill col-12 col-lg-6">
+                    <div class="skills__percent">90%</div>
+                    <div class="progress-container">
+                        <strong>Time Management</strong>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill col-12 col-lg-6">
+                    <div class="skills__percent">85%</div>
+                    <div class="progress-container">
+                        <strong>Cultural Immersion</strong>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="portfolio">
+        <h2>Gallery</h2>
+        <hr>
+        <div class="container">
+            <div class="portfolio__projects">
+                <div class="row">
+                    <img style="margin: 0 auto;" src="https://iili.io/JG4lZ1p.png">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <div class="contact__social">
+                <a href="https://in.pinterest.com/arieteleticia/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                <a href="https://m.youtube.com/c/AnAngolanGirlAbroad/videos" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="footer">
+        <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/adbaditya/" target="_blank">Adi Bajaj</a> <i class="fa fa-copyright" aria-hidden="true"></i>2024</p>
+    </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+      <script>
+      $(function() {
+   
+    // Menu Responsive
+    $(".menu-responsive").toggle();
+    
+    $(".menu-bars").on("click", function() {
+        $(".menu-responsive").toggle("slow");
+    });
+    
+    
+    // Scroll click on menu
+    $(".scroll").on("click", function() {   
+        $(this).each(function() {
+            const sectionTop = $(this.hash).offset().top;
+            $("html, body").animate({
+                scrollTop: sectionTop
+            }, 1500);
+        });
+    });
+    
+    
+    // Progress Bar Animate
+    window.sr = ScrollReveal();
+    sr.reveal(".progress-bar", {
+       origin: "left",
+       duration: 2000,
+       distance: "100%"
+    });
+    
+    
+    // Contact Text Animate
+    const sentences = ["web designer ?", "web developer ?"];
+    let i = 0;
+    
+    setInterval(function() {
+        $(".text-animate").fadeOut(function() {
+            $(this).text(sentences[i = (i + 1) % sentences.length]).fadeIn();
+        });
+    }, 2500);
+    
+});
+      </script>    
+</body>
+</html>
